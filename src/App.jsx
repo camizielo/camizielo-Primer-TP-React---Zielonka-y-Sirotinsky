@@ -4,7 +4,6 @@ import FormularioCita from './components/FormularioCita/FormularioCita'
 import ListaCitas from './components/ListaCitas/ListaCitas'
 
 function App() {
-  // useState con una cita de prueba estática (requerimiento del TP)
   const [citas, setCitas] = useState([
     {
       id: 1,
