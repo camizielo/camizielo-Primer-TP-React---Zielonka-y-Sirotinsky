@@ -1,6 +1,5 @@
 import './Cita.css'
 
-// Cita recibe UN objeto "cita" con todos sus datos via props
 function Cita({ cita }) {
   const { mascota, propietario, fecha, hora, sintomas } = cita
 

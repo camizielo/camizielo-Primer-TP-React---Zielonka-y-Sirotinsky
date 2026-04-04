@@ -1,6 +1,6 @@
-import './FormularioCita.css'
+import './formulario.css'
 
-function FormularioCita() {
+function Formulario() {
   return (
     <>
       <h2>Crear mi Cita</h2>
@@ -49,4 +49,4 @@ function FormularioCita() {
   )
 }
 
-export default FormularioCita
+export default Formulario

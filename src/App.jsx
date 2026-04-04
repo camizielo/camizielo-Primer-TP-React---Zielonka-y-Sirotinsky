@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Header from './components/Header/Header'
 import FormularioCita from './components/FormularioCita/FormularioCita'
 import ListaCitas from './components/ListaCitas/ListaCitas'
 
