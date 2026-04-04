@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import FormularioCita from './components/FormularioCita/FormularioCita'
-import ListaCitas from './components/ListaCitas/ListaCitas'
+import Formulario from './components/formulario'
+import ListaCitas from './components/ListaCitas'
+import './App.css'
 
 function App() {
   const [citas, setCitas] = useState([
@@ -32,11 +33,11 @@ function App() {
 
   return (
     <div>
-      <Header titulo="Administrador de Pacientes" />
+      <h1>Administrador de Pacientes</h1>
       <div className="container">
         <div className="row">
           <div className="one-half column">
-            <FormularioCita />
+            <Formulario />
           </div>
           <div className="one-half column">
             <ListaCitas citas={citas} />

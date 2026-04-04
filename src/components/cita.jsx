@@ -1,4 +1,4 @@
-import './Cita.css'
+import './cita.css'
 
 function Cita({ cita }) {
   const { mascota, propietario, fecha, hora, sintomas } = cita
@@ -9,7 +9,7 @@ function Cita({ cita }) {
       <p>Dueño: <span>{propietario}</span></p>
       <p>Fecha: <span>{fecha}</span></p>
       <p>Hora: <span>{hora}</span></p>
-      <p>Sintomas: <span>{sintomas}</span></p>
+      <p>Síntomas: <span>{sintomas}</span></p>
       <button className="button eliminar u-full-width">Eliminar ×</button>
     </div>
   )
