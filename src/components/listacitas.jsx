@@ -1,15 +1,24 @@
 import './listacitas.css'
-import Cita from './cita'
+import Cita from "./Cita";
 
-function ListaCitas({ citas }) {
+function ListadoCitas({ citas, eliminarCita }) {
   return (
-    <>
+    <div className="one-half column">
       <h2>Administra tus citas</h2>
-      {citas.map((cita) => (
-        <Cita key={cita.id} cita={cita} />
-      ))}
-    </>
-  )
+
+      {citas.length === 0 ? (
+        <p>No hay citas</p>
+      ) : (
+        citas.map((cita, index) => (
+          <Cita
+            key={index}
+            cita={cita}
+            eliminarCita={() => eliminarCita(index)}
+          />
+        ))
+      )}
+    </div>
+  );
 }
 
-export default ListaCitas
+export default ListadoCitas;

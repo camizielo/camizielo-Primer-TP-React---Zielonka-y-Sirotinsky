@@ -1,51 +1,35 @@
-import { useState } from 'react'
-import Formulario from './components/formulario'
-import ListaCitas from './components/ListaCitas'
 import './App.css'
+import { useState } from "react";
+import Formulario from "./components/formulario";
+import ListadoCitas from "./components/listacitas";
 
 function App() {
-  const [citas, setCitas] = useState([
-    {
-      id: 1,
-      mascota: 'Nina',
-      propietario: 'Martin',
-      fecha: '2021-08-05',
-      hora: '08:20',
-      sintomas: 'Le duele la pierna',
-    },
-    {
-      id: 2,
-      mascota: 'Sifon',
-      propietario: 'Flecha',
-      fecha: '2023-08-05',
-      hora: '09:24',
-      sintomas: 'Duerme mucho',
-    },
-    {
-      id: 3,
-      mascota: 'Floki',
-      propietario: 'Ari',
-      fecha: '2023-08-05',
-      hora: '16:15',
-      sintomas: 'No está comiendo',
-    },
-  ])
+  const [citas, setCitas] = useState([]);
+
+  const agregarCita = (cita) => {
+    setCitas([...citas, cita]);
+  };
+
+  const eliminarCita = (index) => {
+    const confirmar = window.confirm("¿Estas seguro de eliminar esta cita?");
+    if (!confirmar) return;
+
+    const nuevasCitas = citas.filter((_, i) => i !== index);
+    setCitas(nuevasCitas);
+  };
 
   return (
-    <div>
-      <h1>Administrador de Pacientes</h1>
+    <>
+      <h1>ADMINISTRADOR DE PACIENTES</h1>
+
       <div className="container">
         <div className="row">
-          <div className="one-half column">
-            <Formulario />
-          </div>
-          <div className="one-half column">
-            <ListaCitas citas={citas} />
-          </div>
+          <Formulario agregarCita={agregarCita} />
+          <ListadoCitas citas={citas} eliminarCita={eliminarCita} />
         </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
